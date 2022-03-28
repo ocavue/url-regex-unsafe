@@ -2,14 +2,7 @@ const ipRegex = require('ip-regex');
 const tlds = require('tlds');
 
 /* istanbul ignore next */
-const SafeRegExp = (() => {
-  try {
-    const RE2 = require('re2');
-    return typeof RE2 === 'function' ? RE2 : RegExp;
-  } catch {
-    return RegExp;
-  }
-})();
+const UnSafeRegExp = RegExp;
 const ipv4 = ipRegex.v4().source;
 const ipv6 = ipRegex.v6().source;
 
@@ -69,6 +62,6 @@ module.exports = (options) => {
   if (options.returnString) return regex;
 
   return options.exact
-    ? new SafeRegExp(`(?:^${regex}$)`, 'i')
-    : new SafeRegExp(regex, 'ig');
+    ? new UnSafeRegExp(`(?:^${regex}$)`, 'i')
+    : new UnSafeRegExp(regex, 'ig');
 };
