@@ -8,7 +8,7 @@ const virtualConsole = new VirtualConsole();
 virtualConsole.sendTo(console);
 
 const script = new Script(
-  readFileSync(path.join(__dirname, '..', 'dist', 'url-regex-safe.min.js'))
+  readFileSync(path.join(__dirname, '..', 'dist', 'url-regex-unsafe.min.js'))
 );
 
 const dom = new JSDOM(``, {
