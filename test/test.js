@@ -492,11 +492,11 @@ test('localhost', (t) => {
     ),
     ['http://localhost/pic.jpg']
   );
-  t.deepEqual(
+  t.is(
     "background: url('http://localhost/pic.jpg');".match(
       urlRegex({ localhost: false })
     ),
-    ['pic.jp']
+    null
   );
 });
 
@@ -512,5 +512,21 @@ test('trailing period', (t) => {
       urlRegex({ trailingPeriod: false })
     ),
     ['example.com', 'foobar.com']
+  );
+});
+
+test('do not match partial TLDs', (t) => {
+  t.deepEqual(
+    '.jp is a TLD but .jpeg is not: site1.example.jp site2.example.jpeg'.match(
+      urlRegex({ strict: false })
+    ),
+    ['site1.example.jp']
+  );
+
+  t.deepEqual(
+    '.bn is a TLD but .bns is not: site1.example.com.bn/foo site2.example.com.bns/foo'.match(
+      urlRegex({ strict: false })
+    ),
+    ['site1.example.com.bn/foo', 'site2.example.com']
   );
 });

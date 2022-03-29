@@ -34,7 +34,9 @@ module.exports = (options) => {
   const tld = `(?:\\.${
     options.strict
       ? '(?:[a-z\\u00a1-\\uffff]{2,})'
-      : `(?:${options.tlds.sort((a, b) => b.length - a.length).join('|')})`
+      : `(?:${options.tlds
+          .sort((a, b) => b.length - a.length)
+          .join('|')})(?![a-z])`
   })${options.trailingPeriod ? '\\.?' : ''}`;
 
   const port = '(?::\\d{2,5})?';
