@@ -47,7 +47,8 @@
   },
   "files": [
     "lib",
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "homepage": "https://github.com/ocavue/url-regex-unsafe",
   "jsdelivr": "dist/url-regex-unsafe.min.js",
