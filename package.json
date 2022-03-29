@@ -93,7 +93,7 @@
   },
   "scripts": {
     "ava": "cross-env NODE_ENV=test ava",
-    "browserify": "browserify src/index.js -o dist/url-regex-unsafe.js -s urlRegexSafe -g [ babelify --configFile ./.dist.babelrc ]",
+    "browserify": "browserify src/index.js -o dist/url-regex-unsafe.js -s urlRegexUnsafe -g [ babelify --configFile ./.dist.babelrc ]",
     "build": "npm run build:clean && npm run build:lib && npm run build:dist",
     "build:clean": "rimraf lib dist",
     "build:dist": "npm run browserify && npm run minify",
@@ -104,7 +104,7 @@
     "lint:js": "xo",
     "lint:lib": "eslint -c .lib.eslintrc lib",
     "lint:md": "remark . -qfo",
-    "minify": "cross-env NODE_ENV=production browserify src/index.js -o dist/url-regex-unsafe.min.js -s urlRegexSafe -g [ babelify --configFile ./.dist.babelrc ] -p tinyify",
+    "minify": "cross-env NODE_ENV=production browserify src/index.js -o dist/url-regex-unsafe.min.js -s urlRegexUnsafe -g [ babelify --configFile ./.dist.babelrc ] -p tinyify",
     "nyc": "cross-env NODE_ENV=test nyc ava",
     "pretest": "yarn run build && yarn run lint",
     "test": "cross-env NODE_ENV=test ava",

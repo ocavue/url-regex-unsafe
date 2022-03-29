@@ -24,10 +24,10 @@ const dom = new JSDOM(``, {
 dom.runVMScript(script);
 
 test('should work in the browser', (t) => {
-  t.true(typeof dom.window.urlRegexSafe === 'function');
-  t.true(dom.window.urlRegexSafe({ exact: true }).test('github.com'));
+  t.true(typeof dom.window.urlRegexUnsafe === 'function');
+  t.true(dom.window.urlRegexUnsafe({ exact: true }).test('github.com'));
   t.deepEqual(
-    'some long string with url.com in it'.match(dom.window.urlRegexSafe()),
+    'some long string with url.com in it'.match(dom.window.urlRegexUnsafe()),
     ['url.com']
   );
 });

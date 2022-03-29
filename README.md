@@ -60,16 +60,16 @@ yarn add url-regex-safe re2
 We've resolved [CVE-2020-7661][cve] by including [RE2][] for Node.js usage.  You will not have to manually wrap your URL regular expressions with `new RE2(urlRegex())` anymore through `url-regex-safe` (we do it automatically for you).
 
 ```js
-const urlRegexSafe = require('url-regex-safe');
+const urlRegexUnsafe = require('url-regex-safe');
 
 const str = 'some long string with url.com in it';
-const matches = str.match(urlRegexSafe());
+const matches = str.match(urlRegexUnsafe());
 
 for (const match of matches) {
   console.log('match', match);
 }
 
-console.log(urlRegexSafe({ exact: true }).test('github.com'));
+console.log(urlRegexUnsafe({ exact: true }).test('github.com'));
 ```
 
 ### Browser
@@ -85,13 +85,13 @@ This is the solution for you if you're just using `<script>` tags everywhere!
 <script type="text/javascript">
   (function() {
     var str = 'some long string with url.com in it';
-    var matches = str.match(urlRegexSafe());
+    var matches = str.match(urlRegexUnsafe());
 
     for (var i=0; i<matches.length; i++) {
       console.log('match', matches[i]);
     }
 
-    console.log(urlRegexSafe({ exact: true }).test('github.com'));
+    console.log(urlRegexUnsafe({ exact: true }).test('github.com'));
   })();
 </script>
 ```
