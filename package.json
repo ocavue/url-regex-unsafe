@@ -1,7 +1,7 @@
 {
   "name": "url-regex-unsafe",
   "description": "Regular expression matching for URL's. Maintained, and browser-friendly version of url-regex. This package is vulnerable to CVE-2020-7661. Works in Node v10.12.0+ and browsers.",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "author": "ocavue <ocavue@gmail.com>",
   "bugs": {
     "url": "https://github.com/ocavue/url-regex-unsafe/issues",
