@@ -1,13 +1,14 @@
 {
   "name": "url-regex-unsafe",
-  "description": "Regular expression matching for URL's. Maintained, safe, and browser-friendly version of url-regex. Resolves CVE-2020-7661. Works in Node v10.12.0+ and browsers.",
+  "description": "Regular expression matching for URL's. Maintained, and browser-friendly version of url-regex. This package is vulnerable to CVE-2020-7661. Works in Node v10.12.0+ and browsers.",
   "version": "3.0.0",
-  "author": "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
+  "author": "ocavue <ocavue@gmail.com>",
   "bugs": {
-    "url": "https://github.com/niftylettuce/url-regex-safe/issues",
-    "email": "niftylettuce@gmail.com"
+    "url": "https://github.com/ocavue/url-regex-unsafe/issues",
+    "email": "ocavue@gmail.com"
   },
   "contributors": [
+    "ocavue <ocavue@gmail.com> (https://github.com/ocavue/)",
     "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
     "Kevin Mårtensson <kevinmartensson@gmail.com>",
     "Diego Perini"
@@ -48,8 +49,8 @@
     "lib",
     "dist"
   ],
-  "homepage": "https://github.com/niftylettuce/url-regex-safe",
-  "jsdelivr": "dist/url-regex-safe.min.js",
+  "homepage": "https://github.com/ocavue/url-regex-unsafe",
+  "jsdelivr": "dist/url-regex-unsafe.min.js",
   "keywords": [
     "2020",
     "7661",
@@ -89,7 +90,7 @@
   "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/niftylettuce/url-regex-safe"
+    "url": "https://github.com/ocavue/url-regex-unsafe"
   },
   "scripts": {
     "ava": "cross-env NODE_ENV=test ava",
